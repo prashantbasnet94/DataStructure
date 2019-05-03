@@ -1,0 +1,84 @@
+
+public class Tree {
+	protected  Node root;
+	protected  int length;
+	
+	public Tree(int value) {
+		System.out.println("rootNode");
+		this.root = new Node(value);
+		System.out.println(this.root.value);
+	}
+	
+	
+	public void insert(int value) {
+		Node currentNode = this.root;
+		this.length++;
+ 
+		if(isDuplicate(value)) {
+			while(true) {
+				if(value<currentNode.value) {
+					if(currentNode.left==null) {
+						currentNode.left=new Node(value);
+						break;
+					}
+					currentNode= currentNode.left;
+				}else if(value>currentNode.value) {
+					if(currentNode.right==null) {
+						currentNode.right =new Node(value);
+						break;
+					}
+					currentNode=currentNode.right;
+				}
+				
+				
+			}
+		}
+		
+		
+	}
+	int[] store= new int[this.length];
+	int counter;
+	public  void DepthFirstSearchInOrder() {
+		counter=0;
+		System.out.println("length of store: "+ this.length);
+		
+	 traverseInOrder(this.root,store);
+	 
+	 for(int a=0;a<store.length;a++) {
+		 System.out.println(store[a]);
+	 }
+	
+	}
+	
+	 
+	public void   traverseInOrder(Node node,int[] list) {
+		
+		if(node.left!=null) {
+			traverseInOrder(node.left,list);
+		}
+		System.out.println("coutner: "+counter);
+		store[0]=node.value;
+		counter++;
+		System.out.println("coutner: "+counter);
+		if(node.right!=null) {
+			traverseInOrder(node.right,list);
+		}
+		
+	}
+
+	private boolean  isDuplicate(int value) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Tree [root=" + root + "]";
+	}
+	
+	
+	
+	
+	
+}

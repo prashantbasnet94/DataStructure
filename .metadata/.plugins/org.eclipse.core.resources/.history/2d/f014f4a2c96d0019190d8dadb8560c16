@@ -1,0 +1,11 @@
+
+public class Tree {
+	protected Node root;
+	
+	public Tree(int value) {
+		this.root = new Node(value);
+	}
+	
+	
+	
+}

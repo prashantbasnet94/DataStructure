@@ -1,0 +1,26 @@
+package test;
+
+public class Head {
+	int value;
+	Head next; 
+	
+	public Head() {
+		
+	}
+	public   Head(int value) {
+		 this.value= value;
+		 this.next= null;
+		 
+		 
+		 
+	}
+	@Override
+	public String toString() {
+		return "\n {  value:" + value + ",\n   next: \n" + next + "}";
+	}
+	
+	 
+	
+	
+	
+}

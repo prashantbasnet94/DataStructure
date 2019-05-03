@@ -1,0 +1,284 @@
+package test;
+
+public class LinkedList {
+
+	
+	private static Node headNode;
+	//private Node prevNode;
+	private static Node tail;
+	static int length;
+	private static int totalDuplicatesFound=0;
+	 
+	// data carried by this LinkedList. could be of any type you need.
+	
+	public LinkedList() {
+		
+	}
+	
+	// LinkedList constructor
+	public LinkedList(String value) {
+		
+		System.out.println("inside head");
+	this.headNode = new Node(value);
+	 
+	this.tail = this.headNode;
+	this.length = 1;
+	 
+	//System.out.println(Node.toString());
+	
+
+	}
+	
+
+	
+	//this will append any incoming node at the end
+	public   void append(String value) {
+			//newLinkedList.prev= this.tail;
+		//System.out.println("<<<<<"+newLinkedList.prev);
+		if(!CheckDuplicates(value)) {
+			System.out.println(value.charAt(0));
+			System.out.println((int)value.charAt(0)-97);
+			sectionLength((int)value.charAt(0)-97);
+			Node  newLinkedList = new Node(value);
+			this.tail.next =newLinkedList;
+			 
+			 this.tail=newLinkedList;
+			
+		
+			
+			this.length++;
+		 
+		}
+		 
+	//	return this;
+	}
+	//this will set the incoming node to be the head
+	public void prepend(String value) {
+		
+		 Node newNode = new Node(value);
+		 Node currentHeadNode = this.headNode;
+	//	 this.headNode.prev = newNode;
+	//	 this.prevNode =newNode;
+		 this.headNode=newNode;
+		 newNode.next= currentHeadNode;
+		 this.length++;
+ 		
+	}
+	
+	//will find the index and displace adjacent
+	public void insert(int index, String value) {
+		if(  index>= this.length) {
+			append(value);
+			}
+		
+		Node incomingNode = new Node(value);
+		
+		Node leaderNode =transversingNode(index-1);
+		Node holdingNode= leaderNode.next;
+		
+		
+		
+		incomingNode.next=holdingNode;
+		leaderNode.next= incomingNode;
+		//incomingNode.prev= leaderNode;
+		 //holdingNode.prev = incomingNode;
+		
+		this.length++;
+	}
+
+	//this will go through all the index and find the right one and return one before it
+	public static Node transversingNode(int index) {
+		int counter =0;
+		Node leaderNode = headNode;
+		while(index!=counter) {
+		
+			leaderNode =leaderNode.next;
+			counter++;
+		}
+		
+		return leaderNode;
+	}
+	public String toString(int a) {
+		
+		//System.out.println(" LinkedList \n {\n Head: " + headNode + ", \n tail=" + tail + ", \n length=" + length + "\n}");
+
+  		for(int i=0;i<length-a;i++) {
+			
+			//System.out.println(b);
+			this.headNode=headNode.next;
+		}
+// 		int countTransverseThrougHead=0;
+// 	while(length-countTransverseThrougHead != a) {
+// 			
+// 		this.headNode=headNode.next;
+// 			countTransverseThrougHead++;
+//  		}
+		// return "";
+		return " LinkedList \n {\n Head: " + headNode + ", \n tail=" + tail + ", \n length=" + length + "\n}";
+	}
+	
+	//value about to enter linkdedlist will enter below than result is rendered either true or false 
+	public static boolean CheckDuplicates(String a) {
+	  
+		int counter =0;
+		Node leaderNode = headNode;
+		
+		
+		
+		
+		while(length!=counter) {
+		
+			if(a.equals(leaderNode.value)) {
+				totalDuplicatesFound++;
+				return true;
+			}
+			leaderNode =leaderNode.next;
+			counter++;
+		}
+		
+		return false;
+	}
+	
+	public static int NumberOfDuplicate()
+	{
+		return totalDuplicatesFound;
+	}
+	
+	
+	public static void delete(String value) {
+		
+		Node PreviousNode=findNode(value);
+		Node currentNode = PreviousNode.next;
+		Node NodeNext = currentNode.next;
+		
+		PreviousNode.next =NodeNext;
+		
+		
+	}
+	
+	public static Node findNode( String value) {
+		int counter =0;
+		Node leaderNode = headNode;
+		while(length!=counter) {
+		
+			
+			if(value.equals(leaderNode.next.value)) {
+				return leaderNode;
+			}
+			leaderNode =leaderNode.next;
+			counter++;
+		}
+		return null;
+		
+		
+	}
+	static int[] array=new int[26];
+	public static void sectionLength( int c) {
+		
+		 
+		
+		 array[c]++;
+		System.out.println("--------");
+		for(int a=0;a<array.length;a++){
+			System.out.println(array[a]);
+		}
+		System.out.println("++++++++++");
+//		
+//		
+//		
+//		int counterSection=0,counter =0;
+//		Node leaderNode = headNode;
+//		while(length!=counter) {
+//		
+//			
+//			if(c==(leaderNode.value.charAt(0))) {
+//				counterSection++;
+//			}
+//			leaderNode =leaderNode.next;
+//			counter++;
+//		}
+//		return counterSection;
+		
+		
+	}
+	public static int returnSectionLength(int a) {
+		
+		 
+		
+		System.out.println(a);
+		System.out.println(array.toString());
+		return array[a];
+	}
+
+	public static char[] sectionsLength() {
+		int counterSection=0,counter =0;
+		Node leaderNode = headNode;
+		char v= leaderNode.value.charAt(0);
+		while(length!=counter) {
+		
+			
+			if(v==(leaderNode.value.charAt(0))) {
+				counterSection++;
+			}
+			leaderNode =leaderNode.next;
+			counter++;
+		}
+	//	return counterSection;
+		return null;
+		
+	}
+	
+	
+	
+	
+//	@Override
+//	public String toString() {
+//		return "[\n Node={ value : " + Node.value +" ,next :{ " +this.Node.value+"  }" 
+//	+"},\n tail:{ value: " + this.tail.value + ", next: { " +this.Node.value+"  } },  length=" + length + "]";
+	//}
+
+//	@Override
+//	public String toString() {
+//		return "LinkedList [data=" + Node.value + ", next=" + this.tail.toString() + ", Node=" + Node + ", tail=" + tail + ", length=" + length
+//				+ "]";
+//	}
+//	
+	
+	
+	
+	
+
+//	// another LinkedList constructor if we want to specify the LinkedList to point to.
+//	 
+//	public LinkedList(int dataValue, LinkedList nextValue) {
+//		data = dataValue;
+//		next = nextValue;
+//
+//	}
+//
+//	// these methods should be self-explanatory
+//	public int getData() {
+//		return data;
+//	}
+//
+// 
+//	public void setData(int dataValue) {
+//		data = dataValue;
+//	}
+//
+//	public LinkedList getNext() {
+//		return next;
+//	}
+//
+//	public void setNext(LinkedList nextValue) {
+//		next = nextValue;
+//	}
+//
+//	 
+
+}
+
+
+	
+ 
+

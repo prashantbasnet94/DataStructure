@@ -1,0 +1,30 @@
+
+public class Tree {
+	protected  Node root;
+	
+	public Tree(int value) {
+		this.root = new Node(value);
+	}
+	
+	public void insert(int value) {
+		Node currentNode = this.root;
+		while(true) {
+			if(value<currentNode.value) {
+				if(currentNode.left==null) {
+					currentNode.left=new Node(value);
+				}
+				currentNode= currentNode.left;
+			}else if(value>currentNode.value) {
+				if(currentNode.right==null) {
+					currentNode.right =new Node(value);
+				}
+				currentNode=currentNode.right;
+			}
+			
+			
+		}
+	}
+	
+	
+	
+}

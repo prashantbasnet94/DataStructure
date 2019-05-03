@@ -1,0 +1,36 @@
+
+public class ManipulateTree {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//importing from file
+		System.out.println("Name of the file you have data :  ?");
+		String fileName=sc.nextLine();
+		try {
+			
+			
+			//File file = new File(fileName+".txt");
+			File file = new File("numbers.txt");
+			FileReader fileReader = new FileReader(file);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			String line;
+			
+			 int firstValue=0;
+			while ((line = bufferedReader.readLine()) != null) {
+				if(firstValue==0) {
+					list= new LinkedList(0);
+				}
+				firstValue++;
+				int value = Integer.parseInt(line);
+				//System.out.println(value);
+				list.append(value);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		ask(sc,list);
+
+	}
+
+}

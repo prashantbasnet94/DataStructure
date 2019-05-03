@@ -1,0 +1,45 @@
+
+public class Tree {
+	protected  Node root;
+	
+	public Tree(int value) {
+		System.out.println("rootNode");
+		this.root = new Node(value);
+		System.out.println(this.root.value);
+	}
+	
+	Node currentNode = this.root;
+	public void insert(int value) {
+	System.out.println(value);
+		
+		while(true) {
+			if(value<currentNode.value) {
+				if(currentNode.left==null) {
+					currentNode.left=new Node(value);
+					break;
+				}
+				currentNode= currentNode.left;
+			}else if(value>currentNode.value) {
+				if(currentNode.right==null) {
+					currentNode.right =new Node(value);
+					break;
+				}
+				currentNode=currentNode.right;
+			}
+			
+			
+		}
+		
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Tree [root=" + root + "]";
+	}
+	
+	
+	
+	
+	
+}

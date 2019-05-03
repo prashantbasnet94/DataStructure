@@ -1,0 +1,31 @@
+package test;
+
+public class Node {
+	static int value;
+	static Node next; 
+	 
+	
+	public Node() {
+		
+	}
+	public   Node(int value) {
+		 Node.value= value;
+		 Node.next= null;
+		 
+		 
+		 
+		 
+		 
+	} 
+	
+	@Override
+	public String toString() {
+		
+		
+		return " {value=" + value + ", next=" + next + "}";
+	}
+	 
+	
+	
+	
+}

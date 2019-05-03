@@ -1,0 +1,45 @@
+package test;
+
+import java.util.Scanner;
+
+public class ManipulateLinkedList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedList list = new LinkedList(2);
+				   
+		list.append(3);
+ 	//	list.append(7);
+//		list.prepend(4);
+//		list.prepend(3);
+//		list.prepend(2);
+	//	list.prepend(1);
+	//	list.insert(2, 4);
+		//list.append(5)
+		
+		
+//		System.out.println("How many list do you want to be revealed? ");
+//		Scanner sc = new Scanner(System.in);
+//		int number = sc.nextInt();
+		
+		
+		System.out.println(list.toString( ));
+ 
+		//System.out.println(node.append(15).toString());
+		 
+		/*
+		 * Please note that primitive values can not be added into LinkedList directly. They must be converted to their
+		 * corresponding wrapper class.
+		 */
+ 
+//		System.out.println("Print: crunchifyList: \t\t" + crunchifyList);
+//		System.out.println(".size(): \t\t\t\t" + crunchifyList.size());
+//		System.out.println(".get(3): \t\t\t\t" + crunchifyList.get(3) + " (get element at index:3 - list starts from 0)");
+//		System.out.println(".remove(2): \t\t\t\t" + crunchifyList.remove(2) + " (element removed)");
+//		System.out.println(".get(3): \t\t\t\t" + crunchifyList.get(3) + " (get element at index:3 - list starts from 0)");
+//		System.out.println(".size(): \t\t\t\t" + crunchifyList.size());
+//		System.out.println("Print again: crunchifyList: \t" + crunchifyList);
+		
+	}
+
+}

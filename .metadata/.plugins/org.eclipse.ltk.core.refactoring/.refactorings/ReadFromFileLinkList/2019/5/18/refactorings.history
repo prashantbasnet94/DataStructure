@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ReadFromFileLinkList/numbers (1).txt&apos; to &apos;numbers.txt&apos;" description="Rename resource &apos;numbers (1).txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="numbers (1).txt" name="numbers.txt" stamp="1556679701485" updateReferences="true"/>
+</session>

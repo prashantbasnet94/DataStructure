@@ -1,0 +1,18 @@
+
+public class Tree {
+	protected static Node root;
+	
+	public Tree(int value) {
+		this.root = new Node(value);
+	}
+	
+	public static void insert(int value) {
+		Node currentNode = this.root;
+		while(true) {
+			if(value<)
+		}
+	}
+	
+	
+	
+}
