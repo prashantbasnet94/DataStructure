@@ -146,6 +146,7 @@ public class LinkedList {
 	
 	public static void delete(String value) {
 		
+		
 		Node PreviousNode=findNode(value);
 		Node currentNode = PreviousNode.next;
 		Node NodeNext = currentNode.next;
@@ -160,7 +161,7 @@ public class LinkedList {
 		Node leaderNode = headNode;
 		while(length!=counter) {
 		
-			
+
 			if(value.equals(leaderNode.next.value)) {
 				return leaderNode;
 			}

@@ -76,6 +76,7 @@ public class ManipulateLinkedList {
 			String a=sc.next();
 			LinkedList.delete(a);
 			System.out.println();
+			System.out.println(list.toString(LinkedList.length ));
 			ask(sc,list);
 		break;
 		case 4:
